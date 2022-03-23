@@ -37,6 +37,7 @@ fun Application.configureRouting() {
             } else {
                 val data = call.receive<Habit>()
                 api.updateHabit(id.toInt(), data)
+                call.respond(status = HttpStatusCode.OK, message = "Updated")
             }
         }
         post("/habit") {
@@ -50,6 +51,7 @@ fun Application.configureRouting() {
                 call.respond(status = HttpStatusCode.BadRequest, "No ID specified")
             } else {
                 api.deleteHabit(id.toInt())
+                call.respond(status = HttpStatusCode.OK, message = "Deleted")
             }
         }
     }

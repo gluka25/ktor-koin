@@ -34,8 +34,9 @@ object HabitDBData {
     fun getHabitsList(): List<Habit?> {
         return transaction {
             HabitDB.selectAll()
-        }.map {
-            HabitDB.toHabit(it)
+                .map {
+                    HabitDB.toHabit(it)
+                }
         }
     }
 
