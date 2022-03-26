@@ -1,6 +1,7 @@
 package otus.kotlinqa.api
 
 import otus.kotlinqa.database.HabitDBData
+import otus.kotlinqa.database.HabitTestData
 import otus.kotlinqa.models.Habit
 
 interface RestAPI {
@@ -22,4 +23,17 @@ class RestAPIImpl : RestAPI {
     override fun deleteHabit(id: Int) = HabitDBData.deleteHabit(id)
 
     override fun getHabitsList(): List<Habit?> = HabitDBData.getHabitsList()
+}
+
+class RestAPITestImpl : RestAPI {
+
+    override fun getHabit(id: Int): Habit? = HabitTestData.getHabit(id)
+
+    override fun addHabit(habit: Habit) = HabitTestData.insertHabit(habit)
+
+    override fun updateHabit(id: Int, habit: Habit) = HabitTestData.updateHabit(id, habit)
+
+    override fun deleteHabit(id: Int) = HabitTestData.deleteHabit(id)
+
+    override fun getHabitsList(): List<Habit?> = HabitTestData.getHabitsList()
 }

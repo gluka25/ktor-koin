@@ -21,17 +21,18 @@ class ApplicationTest {
     @Before
     fun init() {
         //todo: exclude after test module
-        initDB()
+        //initDB()
         startKoin {
             //todo: replace with test module
-            modules(habitsModule)
+            //modules(habitsModule)
+            modules(habitsTestModule)
         }
     }
 
-    @After
-    fun remove() {
-        removeDB()
-    }
+//    @After
+//    fun remove() {
+//        removeDB()
+//    }
 
     @Test
     fun testCreating() {
