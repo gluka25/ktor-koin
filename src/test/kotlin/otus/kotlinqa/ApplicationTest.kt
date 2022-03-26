@@ -13,6 +13,7 @@ import org.koin.core.context.startKoin
 import otus.kotlinqa.database.initDB
 import otus.kotlinqa.database.removeDB
 import otus.kotlinqa.models.Habit
+import otus.kotlinqa.modules.habitsTestModule
 import otus.kotlinqa.plugins.configureRouting
 import kotlin.test.Test
 import kotlin.test.assertEquals

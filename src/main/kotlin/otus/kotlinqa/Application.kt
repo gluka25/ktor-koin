@@ -9,7 +9,6 @@ import org.koin.ktor.ext.Koin
 import org.koin.logger.slf4jLogger
 import otus.kotlinqa.api.RestAPI
 import otus.kotlinqa.api.RestAPIImpl
-import otus.kotlinqa.api.RestAPITestImpl
 import otus.kotlinqa.plugins.*
 
 fun main() {
@@ -25,8 +24,4 @@ fun main() {
 
 val habitsModule = module {
     single<RestAPI> { RestAPIImpl() }
-}
-
-val habitsTestModule = module {
-    single<RestAPI> { RestAPITestImpl() }
 }
